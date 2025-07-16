@@ -173,18 +173,24 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 elements.forEach(el => observer.observe(el));
 
-  const fadeInElements = document.querySelectorAll('.fadein-left');
+const fadeInElements = document.querySelectorAll('.fadein-left');
 
-  const observer1 = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // one-time animation
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
+// const observer1 = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//         entry.target.classList.add('show');
+//         observer.unobserve(entry.target); // one-time animation
+//         }
+//     });
+// }, {
+//     threshold: 0.2
+// });
 
-  fadeInElements.forEach(el => observer1.observe(el));
+  fadeInElements.forEach(el => observer.observe(el));
 
+  const designer = document.querySelector('.Designer');
+
+  observer.observe(designer);
+
+  const coder = document.querySelector('.coder');
+  observer.observe(coder);

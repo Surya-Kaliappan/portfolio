@@ -15,10 +15,8 @@ html, body{
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
-    /* overflow-x: hidden; */
     overflow: auto;
     background-color: #0a0a0a;
-    /* overflow-y: scroll;         always show scroll context */
     scrollbar-width: none;      /* Firefox */
     -ms-overflow-style: none;   /* IE 10+ */
 }
@@ -763,14 +761,37 @@ header ul a:hover{
     mix-blend-mode: difference;
 }
 
+
 .Designer{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: start;
     top:25%;
-    left: 5%;
+    left: 50%;
     max-width: 300px;
+    filter: blur(10px);
+    /* opacity: 0; */
+}
+
+.Designer.show{
+    animation: slidebothOnLeft 1.5s ease forwards;
+}
+
+@keyframes slidebothOnLeft{
+    0%{
+        /* opacity: 0; */
+        filter: blur(10px);
+        left: 50%;
+    } 50% {
+        /* opacity: 1; */
+        filter: blur(0);
+        left: 5%;
+    } 100% {
+        /* opacity: 1; */
+        filter: blur(0);
+        left: 5%;
+    }
 }
 
 .Designer h1{
@@ -789,8 +810,26 @@ header ul a:hover{
     flex-direction: column;
     align-items: start;
     top:25%;
-    right: 5%;
+    right: 50%;
     max-width: 300px;
+    filter: blur(10px);
+}
+
+.coder.show{
+    animation: slidebothOnRight 1.5s ease forwards;
+}
+
+@keyframes slidebothOnRight{
+    0%{
+        filter: blur(10px);
+        right: 50%;
+    } 50% {
+        filter: blur(0);
+        right: 5%;
+    } 100% {
+        filter: blur(0);
+        right: 5%;
+    }
 }
 
 .coder h1{
@@ -971,7 +1010,7 @@ header ul a:hover{
 @media screen and (max-width: 947px){
     header{
         position: fixed;
-        height: 50px;
+        height: 45px;
     }
     header ul{
         display: none;
