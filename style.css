@@ -496,7 +496,7 @@ header ul a:hover{
     justify-content: center;
     position: relative;
     width: auto;
-    min-width: 400px;
+    /* min-width: 400px; */
     height: 40vh;
     overflow: hidden;
     border: 1px solid gray;
@@ -546,7 +546,7 @@ header ul a:hover{
     box-shadow: 0 0 15px rgb(211, 211, 211);
 }
 
-.card:nth-child(2) p{
+.card:nth-child(2) p, .card:nth-child(1) p{
     bottom: 0%;
 }
 
@@ -1046,7 +1046,9 @@ header ul a:hover{
         font-size: 20px;
     }
     .hero-info-title{
+        width: 80vw;
         padding: 9px 9px;
+        text-align: center;
     }
     .hero-info-h1{
         /* font-size: 30px; */
@@ -1080,10 +1082,14 @@ header ul a:hover{
         align-items: center;
     }
     .card{
-        min-height: 45vh;
+        width: 90vw;
+        height: 45vh;
     }
     .card:nth-child(3){
-        min-height: 70vh;
+        height: 65vh;
+    }
+    .card:nth-child(4){
+        height: 50vh;
     }
     .card h1{
         bottom: 30%;
@@ -1091,6 +1097,9 @@ header ul a:hover{
     }
     .card p{
         font-size: 1rem;
+    }
+    .card video{
+        width: 80%;
     }
     /* Project Section */
     /* .my-project{
