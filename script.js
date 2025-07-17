@@ -73,9 +73,9 @@ function initAnimation() {
     .to(".scroll-down", {
         opacity: 1,
         filter: 'blur(0px)',
-        duration: 0.5,
+        duration: 0.8,
         ease: "power3.out",
-    })
+    }, "-=0.3")
     .to(".info-section",{
         display: 'flex'
     })
@@ -90,9 +90,6 @@ function initAnimation() {
     })
     .to(".footer", {
         display: 'flex',
-        y: 0,
-        duration: 1,
-        ease: "power3.out"
     })
 }
 
@@ -158,39 +155,25 @@ function sidebarShow(){
     
 }
 
-const elements = document.querySelectorAll('.autoDisplay');
-
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-        entry.target.classList.add('show');
+            entry.target.classList.add('show');
         observer.unobserve(entry.target); // 👈 animate only once
         }
     });
-    }, {
+}, {
     threshold: 0.2  // Trigger when 20% visible
 });
 
+const elements = document.querySelectorAll('.autoDisplay');
 elements.forEach(el => observer.observe(el));
 
 const fadeInElements = document.querySelectorAll('.fadein-left');
+fadeInElements.forEach(el => observer.observe(el));
 
-// const observer1 = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//         entry.target.classList.add('show');
-//         observer.unobserve(entry.target); // one-time animation
-//         }
-//     });
-// }, {
-//     threshold: 0.2
-// });
+const designer = document.querySelector('.Designer');
+observer.observe(designer);
 
-  fadeInElements.forEach(el => observer.observe(el));
-
-  const designer = document.querySelector('.Designer');
-
-  observer.observe(designer);
-
-  const coder = document.querySelector('.coder');
-  observer.observe(coder);
+const coder = document.querySelector('.coder');
+observer.observe(coder);
