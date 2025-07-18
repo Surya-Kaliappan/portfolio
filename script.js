@@ -129,7 +129,9 @@ function scrollto(e, type){
         targetElement.scrollIntoView({behavior: 'smooth'});
     }
 }
-document.querySelector('.nav-link').addEventListener('click', (e)=>{scrollto(e,'a[data-target]')});
+document.querySelectorAll('.nav-link').forEach((navLink) => {
+    navLink.addEventListener('click', (e) => scrollto(e, 'a[data-target]'));
+});
 document.querySelector('.hero-info-btn').addEventListener('click', (e)=>{scrollto(e, 'button[data-target]')});
 
 // Sidebar 

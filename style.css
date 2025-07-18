@@ -521,7 +521,7 @@ header ul a:hover{
     bottom: 5%;
     z-index: 1;
     /* max-width: 300px; */
-    color: gray;
+    color: rgba(248, 248, 255, 0.912);
     font-size: 17px;
     line-height: 20px;
     padding: 5%;
@@ -660,7 +660,6 @@ header ul a:hover{
 }
 
 .project-info button:hover{
-    opacity: 0.8;
     box-shadow: 0 0 15px #72a1de81;
 }
 
@@ -766,7 +765,6 @@ header ul a:hover{
     align-items: start;
     justify-content: center;
     mix-blend-mode: lighten;
-    opacity: 0.7;
 }
 
 .skills-image{
@@ -784,7 +782,6 @@ header ul a:hover{
     left: 50%;
     max-width: 300px;
     filter: blur(10px);
-    /* opacity: 0; */
 }
 
 .Designer.show{
@@ -793,15 +790,12 @@ header ul a:hover{
 
 @keyframes slidebothOnLeft{
     0%{
-        /* opacity: 0; */
         filter: blur(10px);
         left: 50%;
     } 50% {
-        /* opacity: 1; */
         filter: blur(0);
         left: 0;
     } 100% {
-        /* opacity: 1; */
         filter: blur(0);
         left: 0;
     }
@@ -917,7 +911,6 @@ header ul a:hover{
     position: relative;
     z-index: 20;
     flex-direction: column;
-    /* margin-bottom: 100px; */
 }
 
 .form{
@@ -1072,10 +1065,6 @@ header ul a:hover{
     .section-title{
         font-size: 7vw;
     }
-    /* info section */
-    /* .info-section{
-        margin-bottom: 70rem;
-    } */
     .info-cards{
         display: flex;
         flex-direction: column;
@@ -1085,6 +1074,9 @@ header ul a:hover{
         width: 90vw;
         height: 45vh;
     }
+    /* .card:nth-child(1) img{
+        transform: scale(1.1);
+    } */
     .card:nth-child(3){
         height: 65vh;
     }
@@ -1151,6 +1143,7 @@ header ul a:hover{
         font-size: 2rem;
     }
     .Designer p{
+        margin-top: 10px;
         font-size: 1rem;
     }
     .coder{
@@ -1161,6 +1154,7 @@ header ul a:hover{
         font-size: 2rem;
     }
     .coder p{
+        margin-top: 10px;
         font-size: 1rem;
     }
     .slider{
