@@ -79,10 +79,10 @@ function initAnimation() {
     .to(".info-section",{
         display: 'flex'
     })
-    .to(".my-project", {
+    .to(".skills-section", {
         display: 'flex',
     })
-    .to(".skills-section", {
+    .to(".my-project", {
         display: 'flex'
     })
     .to(".contact-section", {

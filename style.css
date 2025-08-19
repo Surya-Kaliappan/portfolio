@@ -609,7 +609,7 @@ header ul a:hover{
     min-width: 400px;
 }
 
-.project-vidbox video{
+.project-vidbox img{
     object-fit: cover;
     width: 100%;
     box-shadow: 0 0 10px lightgray;
@@ -617,7 +617,7 @@ header ul a:hover{
     transition: 0.5s;
 }
 
-.project-vidbox video:hover{
+.project-vidbox img:hover{ 
     box-shadow: 0 0 25px rgb(255, 255, 255);
 }
 
@@ -1074,9 +1074,9 @@ header ul a:hover{
         width: 90vw;
         height: 45vh;
     }
-    /* .card:nth-child(1) img{
+    .card:nth-child(1) img{
         transform: scale(1.1);
-    } */
+    }
     .card:nth-child(3){
         height: 65vh;
     }
