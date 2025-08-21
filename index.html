@@ -35,8 +35,9 @@
          <ul class="nav-link">
              <li><a href="#" data-target="hero">Home</a></li>
              <li><a href="#" data-target="info-section">About</a></li>
-             <li><a href="#" data-target="my-project">Projects</a></li>
              <li><a href="#" data-target="skills-section">Skills</a></li>
+             <li><a href="#" data-target="my-project">Projects</a></li>
+             <li><a href="#" data-target="contact-section">Contacts</a></li>
          </ul>
 
          <div class="box-icons">
@@ -56,8 +57,9 @@
             <ul class="nav-link">
                 <li><a href="#" data-target="hero">Home</a></li>
                 <li><a href="#" data-target="info-section">About</a></li>
-                <li><a href="#" data-target="my-project">Projects</a></li>
                 <li><a href="#" data-target="skills-section">Skills</a></li>
+                <li><a href="#" data-target="my-project">Projects</a></li>
+                <li><a href="#" data-target="contact-section">Contacts</a></li>
             </ul>
             <div class="social-sidebar">
                 <a><i class="bx bxl-github"></i></a>
@@ -76,8 +78,11 @@
 
             <h1 class="hero-info-h1">Providing <span class="gradient">The best</span> Project <span class="gradient">Experience</span></h1>
             <p class="hero-info-p">I'm a Software Developer with experience in Website, Mobile and Software development. Check out my project and skills.</p>
-            <button class="hero-info-btn" data-target="contact-section">Contact Me</button>
+            <button class="hero-info-btn" data-target="info-section">About Me</button>
 
+        </div>
+        <div class="skills-video-box" >
+            <video class="skills-video" autoplay loop muted plays-inline src="videos/glob.mp4"></video>
         </div>
         <div class="scroll-down"></div>
     </section>
@@ -114,13 +119,13 @@
         <div class="skills-box autoDisplay">
                 <img class="skills-image" src="images/digital brain (2).png" alt="">
                 <div class="Designer">
-                    <h1 class="gradient">Designer <i class='bx bx-laptop'></i></h1>
-                    <p>I have expertise in HTML, CSS, JavaScript, and design tools like Figma and Adobe XD. My strength lies in blending aesthetics with functionality to create seamless user experiences.</p>    
+                    <h1 class="gradient">Problem Solving &nbsp;<i class='bx bx-laptop'></i></h1>
+                    <p>I solve problems by focusing on the user's need first. I diagnose issues like poor engagement or confusing UI, prototype solutions, and implement pragmatic fixes that balance technical excellence with real-world impact, such as streamlining workflows to significantly increase conversion rates.</p>    
                 </div>
                 
                 <div class="coder">
-                    <h1 class="gradient">Coder <i class='bx bx-code-block' ></i></h1>
-                    <p>I'm skilled in HTML, CSS, JavaScript, and frameworks like React and Node.js. I also have experience with database management using MongoDB and MySQL.</p>
+                    <h1 class="gradient">Development &nbsp;<i class='bx bx-code-block' ></i></h1>
+                    <p>A backend developer with full-stack proficiency. I build high-performance RESTful APIs, manage database architecture, and implement server-side logic. My frontend skills allow me to own features end-to-end, ensuring the backend services I create are perfectly tailored for the consumer applications, leading to more efficient and cohesive development.</p>
                 </div>
 
                 <div class="slider" reverse="true" style="
@@ -147,32 +152,33 @@
         <h1 class="section-title autoDisplay">My Projects..</h1>
         <div class="project-card autoDisplay">
             <div class="project-vidbox ">
-                <img id="projectImage1" src="images/green-connect.png" alt="Project 1 Screenshot">
+                <img id="projectImage1" src="images/certificate_generator.png" alt="Certificate Generator">
             </div>
             <div class="project-info fadein-left">
-                <h1>Animated <span class="gradient">Gaming</span> Website</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam excepturi ex in corrupti similique dolor nam, suscipit, odio soluta at recusandae nulla, id fugiat!</p>
-                <button><i class="bx bx-link-external"></i> Website</button>
+                <h1><span class="gradient">Certificate</span> Generator</h1>
+                <p>Developed a full-stack Automated Certificate Generation Platform to simplify certificate creation for educators and organizers, addressing manual design inefficiencies. The app offers an interactive canvas for drag-and-drop text, real-time font customization, undo/redo, bulk PDF generation from Excel uploads, and automated email delivery via Nodemailer. It ensures a responsive UI across devices. Hosted on Render, this project honed my skills in full-stack development, API design, and deployment.</p>
+                <button type="button" onclick="window.open('https://cert-gen-app.onrender.com/','_blank');"><i class="bx bx-link-external"></i> Website</button>
+                <!-- <input type="button" onclick="location.href='https://cert-gen-app.onrender.com/'"/> -->
             </div>
         </div>
         <div class="project-card autoDisplay">
             <div class="project-vidbox ">
-                <img id="projectImage2" src="images/green-connect.png" alt="Project 2 Screenshot">
+                <img id="projectImage2" src="images/faculty_finder.png" alt="Faculty Finder">  
             </div>
             <div class="project-info fadein-left">
                 <h1>Animated <span class="gradient">Gaming</span> Website</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam excepturi ex in corrupti similique dolor nam, suscipit, odio soluta at recusandae nulla, id fugiat!</p>
-                <button><i class="bx bx-link-external"></i> Website</button>
+                <p>FacultyFinder is a cross-platform application designed to help students quickly locate faculty members on campus by searching with name, department, or specialization. It features a user-friendly interface with searchable dropdowns, responsive design, and real-time data from a MySQL database. Built using React.js, React Native, and Java Swing, it streamlines the process of finding available faculty without any confusion or delay.</p>
+                <button onclick="window.open('https://surya-kaliappan.github.io/facultyfinder-frontend/','_blank');"><i class="bx bx-link-external"></i> Website</button>
             </div>
         </div>
         <div class="project-card autoDisplay">
             <div class="project-vidbox ">
-                <img id="projectImage3" src="images/green-connect.png" alt="Project 3 Screenshot">
+                <img id="projectImage3" src="images/green_connect.png" alt="Green Connect">
             </div>
             <div class="project-info fadein-left">
                 <h1><span class="gradient">Green</span> Connect</h1>
                 <p>A web platform designed to connect users with eco-friendly resources and promote sustainable living. Built using Node.js, Express, and EJS, the application features dynamic routing, responsive UI, and server-side rendering for efficient and accessible interaction.</p>
-                <button><i class="bx bx-link-external"></i> Website</button>
+                <button onclick="window.open('https://github.com/Surya-Kaliappan/GreenConnect','_blank');"><i class="bx bx-link-external"></i> Github</button>
             </div>
         </div>
     </section>
