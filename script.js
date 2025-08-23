@@ -179,3 +179,7 @@ observer.observe(designer);
 
 const coder = document.querySelector('.coder');
 observer.observe(coder);
+
+function disclaimer(){
+    alert("This may take some while to open or work because of hosting. you can check the working in console or ignore.")
+}
