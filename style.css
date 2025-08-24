@@ -108,13 +108,6 @@ body::-webkit-scrollbar {
     height: auto;
     z-index: 1;
     transform: translate(-50%, -50%);
-    /* mix-blend-mode: overlay; */
-    /* position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: 1; */
     object-fit: cover;
 }
 
@@ -335,8 +328,7 @@ header ul a:hover{
 }
 
 #scrollToTopBtn:hover {
-  background-color: rgba(0, 0, 69, 0.614);; /* Darker on hover */
-  font-size: 30px;
+  background-color: rgba(0, 0, 69, 0.614);
 }
 
 /* Hero Content */
