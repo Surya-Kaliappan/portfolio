@@ -143,7 +143,7 @@ header{
 header ul{
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 35%;
     padding: 15px 15px;
     border-radius: 15px;
     background-color: rgba(0, 0, 69, 0.4);
@@ -172,7 +172,7 @@ header ul a:hover{
     gap: 40px;
 }
 
-.box-icons p{
+.box-icons a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,14 +181,16 @@ header ul a:hover{
     height: 30px;
     border: 2px solid #72a1de;
     border-radius: 50%;
-    cursor: pointer;
     transition: 0.5s;
+    color: inherit;
+    text-decoration: none;
 }
 
-.box-icons p:hover, .social-sidebar a:hover{
+.box-icons a:hover, .social-sidebar a:hover{
     background: #72a1de;
     color: black;
     box-shadow: 0 0 15px #72a1de;
+    cursor: pointer;
 }
 
 .head-name{
@@ -262,6 +264,9 @@ header ul a:hover{
     cursor: pointer;
     transition: 0.5s;
     border-radius: 50%;
+    /* This is for anchor tag */
+    text-decoration: none; 
+    color: #fff;
 }
 
 .sidebar.open-sidebar{
@@ -309,6 +314,31 @@ header ul a:hover{
     }
 }
 
+#scrollToTopBtn {
+  display: none;
+  position: fixed; 
+  bottom: 80px;
+  right: 20px; 
+  z-index: 1000;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 69, 0.4);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 15px #72a1dea2;
+  color: white;
+  cursor: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  transition: opacity 0.7s ease-in-out;
+}
+
+#scrollToTopBtn:hover {
+  background-color: rgba(0, 0, 69, 0.614);; /* Darker on hover */
+  font-size: 30px;
+}
+
 /* Hero Content */
 .hero{
     position: relative;
@@ -317,7 +347,6 @@ header ul a:hover{
     width: 100%;
     min-height: 100vh;
     align-items: center;
-    /* justify-content: space-between; */
     justify-content: flex-start;
     z-index: 20;
 }
@@ -387,9 +416,14 @@ header ul a:hover{
     opacity: 0;
     filter: blur(10px);
     transform: translateY(5rem);
+    font-size: 15px;
+
+    /* This is for anchor tag */
+    text-decoration: none; 
+    display: inline-block;
 }
 
-.hero-info  button:hover{
+.hero-info-btn:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
@@ -506,7 +540,7 @@ header ul a:hover{
     justify-content: center;
     position: relative;
     width: auto;
-    /* min-width: 400px; */
+    min-width: 25vw;
     height: 42vh;
     overflow: hidden;
     border: 1px solid gray;
@@ -545,14 +579,6 @@ header ul a:hover{
     mix-blend-mode: lighten;
 }
 
-/* .card video{
-    margin-top: 10%;
-    width: 70%;
-    height: 50%;
-    object-fit: cover;
-    mix-blend-mode: lighten;
-} */
-
 .card:hover{
     box-shadow: 0 0 15px rgb(211, 211, 211);
 }
@@ -573,12 +599,9 @@ header ul a:hover{
 .card:nth-child(4) h1, .card:nth-child(2) h1{
     bottom: 35%
 }
-/* .card:nth-child(4) p{
-    bottom: 0%;
-} */
 
 .card:nth-child(3) img{
-    height: 70%;
+    height: 30vw;
     animation: spin 20s infinite linear;
 }
 
@@ -597,10 +620,9 @@ header ul a:hover{
     gap: 10%;
     align-items: center;
     width: 100%;
-    /* min-height: 100vh; */
     height: auto;
     margin-top: 150px;
-    /* margin-bottom: 700px; */
+    margin-bottom: 50px;
     z-index: 20;
 }
 
@@ -698,7 +720,7 @@ header ul a:hover{
     filter: blur(10px);
     transform: translateY(-200px) scale(0);
   }
-  50% {
+  60% {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
@@ -770,7 +792,6 @@ header ul a:hover{
     height: auto;
     width: 100%;
     margin-bottom: 100px;
-    /* margin-top: 100px; */
     padding: 0 5%;
 }
 
@@ -950,7 +971,6 @@ header ul a:hover{
 
 .contact-box{
      width: 100%;
-    /* height: 90vh; */
     top: 9%;
     display: flex;
     flex-direction: column;
@@ -965,7 +985,7 @@ header ul a:hover{
     margin-top: 50px;
 }
 
-.contact-box input{
+.contact-box input, .contact-box textarea{
     border: 3px solid #ffffff;
     border-radius: 5px;
     height: 50px;
@@ -982,7 +1002,13 @@ header ul a:hover{
     font-weight: bold;        
 }
 
-.contact-box input:focus{
+.contact-box textarea{
+    height: 100px;
+    min-width: 100%;
+    min-height: 150px;
+}
+
+.contact-box input:focus, .contact-box textarea:focus{
     border: 3px solid rgba(0,0,69,0.708);;
 }
 
@@ -997,11 +1023,29 @@ header ul a:hover{
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
+    margin-bottom: 50px;
 }
 
 .contact-box button:hover{
     opacity: 0.8;
     box-shadow: 0 0 30px #72a1de81;
+}
+
+#form-status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#form-status.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+}
+
+#form-status.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
 }
 
 /* Footer */
@@ -1023,11 +1067,11 @@ header ul a:hover{
 
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) and (min-width: 947px){
     header ul {
         display: flex;
         justify-content: space-between;
-        width: 35%;
+        width: 45%;
         padding: 15px 15px;
         border-radius: 15px;
         background-color: rgba(0,0,69,0.708);
@@ -1036,7 +1080,7 @@ header ul a:hover{
     }
 }
 
-@media screen and (max-width: 947px){
+@media screen and (max-width: 760px){
     .loader-text{
         font-size: 5vw;
     }
@@ -1078,6 +1122,7 @@ header ul a:hover{
     }
     .hero-info-btn{
         padding: 12px 30px;
+        font-size: 12px;
     }
     .scroll-down{
         transform: scale(0.8);
@@ -1085,6 +1130,7 @@ header ul a:hover{
     }
     .section-title{
         font-size: 7vw;
+        margin-top: 20px;
     }
     .info-cards{
         display: flex;
@@ -1199,10 +1245,14 @@ header ul a:hover{
     .form label{
         font-size: 0.9rem;
     }
-    .contact-box input{
-        width: 85%;
+    .contact-box input, .contact-box textarea{
+        width: 100%;
         height: 40px;
         font-size: 0.9rem;
+    }
+    .contact-box textarea{
+        height: 120px;
+        max-width: 100%;
     }
     .contact-box button{
         padding: 12px 30px;
@@ -1218,5 +1268,11 @@ header ul a:hover{
     .footer-icon{
         display: flex;
         flex-direction: row;
+    }
+    #scrollToTopBtn{
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
     }
 }

@@ -25,6 +25,8 @@
      <!-- Following Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
+
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
      
      <!-- Header Section -->
      <header class="nav">
@@ -37,12 +39,12 @@
              <li><a href="#" data-target="info-section">About</a></li>
              <li><a href="#" data-target="skills-section">Skills</a></li>
              <li><a href="#" data-target="my-project">Projects</a></li>
-             <li><a href="#" data-target="contact-section">Contacts</a></li>
+             <li><a href="#" data-target="contact-section">Contact</a></li>
          </ul>
 
          <div class="box-icons">
-             <p><i class="bx bxl-github"></i></p>
-             <p><i class="bx bxl-linkedin-square"></i></p>
+             <a href="https://github.com/Surya-Kaliappan" target="_blank"><i class="bx bxl-github"></i></a>
+             <a href="https://linkedin.com/in/surya-kaliappan" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
          </div>
 
          <div class="menu-icon">
@@ -59,11 +61,11 @@
                 <li><a href="#" data-target="info-section">About</a></li>
                 <li><a href="#" data-target="skills-section">Skills</a></li>
                 <li><a href="#" data-target="my-project">Projects</a></li>
-                <li><a href="#" data-target="contact-section">Contacts</a></li>
+                <li><a href="#" data-target="contact-section">Contact</a></li>
             </ul>
             <div class="social-sidebar">
-                <a><i class="bx bxl-github"></i></a>
-                <a><i class="bx bxl-linkedin-square"></i></a>
+                <a href="https://github.com/Surya-Kaliappan" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="https://linkedin.com/in/surya-kaliappan" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
             </div>
         </div>
      </div>
@@ -77,8 +79,9 @@
             </div>
 
             <h1 class="hero-info-h1">Providing <span class="gradient">The best</span> Project <span class="gradient">Experience</span></h1>
-            <p class="hero-info-p">I'm a Software Developer with experience in Website, Mobile and Software development. Check out my project and skills.</p>
-            <button class="hero-info-btn" data-target="info-section">About Me</button>
+            <p class="hero-info-p">I'm a Software Developer with experience in Web, Mobile applications and Software development. Check out my project and skills.</p>
+            <a href= "#" class="hero-info-btn" data-target="info-section">About Me</a>
+            <a href="doc/resume.pdf" target="_blank" class="hero-info-btn" download="Surya-Resume.pdf" style="margin-left: 10px;">My Resume</a>
 
         </div>
         <div class="skills-video-box" >
@@ -89,7 +92,7 @@
 
     <section class="info-section" id="info-section">
         <h1 class="section-title autoDisplay">Hello, There..</h1>
-        <div class="info-cards autoDisplay">
+        <div class="info-cards autoDisplay" id="info1">
             <div class="card">
                 <h1>I'm Surya,</h1>
                 <p>Final-year Computer Science student and aspiring software engineer, passionate about turning complex ideas into elegant software solutions.</p>
@@ -132,18 +135,26 @@
                 <div class="slider" reverse="true" style="
                 --width: 100px;
                 --height: 100px;
-                --quantity: 9;
+                --quantity: 16;
                 ">
                     <div class="list">
-                        <!-- <div class="item" style="--position: 1"><img src="images/1.png" alt=""></div> -->
-                        <div class="item" style="--position: 1"><img src="images/2.png" alt=""></div>
-                        <div class="item" style="--position: 2"><img src="images/3.webp" alt=""></div>
-                        <!-- <div class="item" style="--position: 4"><img src="images/4.webp" alt=""></div> -->
-                        <!-- <div class="item" style="--position: 5"><img src="images/5.png" alt=""></div> -->
-                        <div class="item" style="--position: 3"><img src="images/6.png" alt=""></div>
-                        <div class="item" style="--position: 4"><img src="images/7.png" alt=""></div>
-                        <!-- <div class="item" style="--position: 8"><img src="images/8.png" alt=""></div> -->
-                        <!-- <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div> -->
+                        <div class="item" style="--position: 1"><img src="images/1.jpg" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="images/2.png" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="images/3.png" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="images/4.png" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="images/5.png" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="images/6.png" alt=""></div>
+                        <div class="item" style="--position: 7"><img src="images/7.png" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="images/8.png" alt=""></div>
+                        <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div>
+                        <div class="item" style="--position: 10"><img src="images/10.png" alt=""></div>
+                        <div class="item" style="--position: 11"><img src="images/11.png" alt=""></div>
+                        <div class="item" style="--position: 12"><img src="images/12.webp" alt=""></div>
+                        <div class="item" style="--position: 13"><img src="images/13.png" alt=""></div>
+                        <div class="item" style="--position: 14"><img src="images/14.png" alt=""></div>
+                        <div class="item" style="--position: 15"><img src="images/15.png" alt=""></div>
+                        <div class="item" style="--position: 16"><img src="images/16.png" alt=""></div>
+
                     </div>
                 </div>
             </div>
@@ -185,34 +196,36 @@
     </section>
 
     <section class="contact-section" id="contact-section">
-            <h1 class="section-title autoDisplay">Let's talk..</h1>
+        <h1 class="section-title autoDisplay">Let's talk..</h1>
 
-            <div class="contact-box autoDisplay">
-                <p class="info">Whether you're looking to build a new website, improve your existing platform, or bring a unique project to file. i'm here to help.</p>
+        <div class="contact-box autoDisplay">
+            <p class="info">Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life. I'm here to help.</p>
 
-                <form class="form">
-                    <label>Full Name</label>
-                    <input placeholder="Your Full name" type="full name">
-
-                    <label>Email Address</label>
-                    <input placeholder="Your Email" type="Contact">
-
-                    <label>Your Message</label>
-                    <input  class="input-message" type="contact" placeholder="share your thoughts...">
-
-                    <button>Send Message <i class='bx bx-mail-send'></i></button>
-                </form>
-            </div>
+            <form id="contact-form" class="form" action="https://formspree.io/f/mandwjqd" method="POST">
         
-        </section> 
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Your Full name" required>
 
-        <section class="footer">
-            <h1>©️2025, Made by Surya</h1>
-            <div class="footer-icon box-icons">
-                <p><i class="bx bxl-github"></i></p>
-                <p><i class="bx bxl-linkedin-square"></i></p>
-            </div>
-        </section>
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Your Email" required>
+
+                <label>Your Message</label>
+                <textarea class="input-message" name="message" placeholder="share your thoughts" required></textarea>
+
+                <button type="submit">Send Message <i class='bx bx-mail-send'></i></button>
+
+            </form>
+            <div id="form-status"></div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h1>©️2025, Created by Surya</h1>
+        <div class="footer-icon box-icons">
+            <a href="https://linkedin.com/in/surya-kaliappan" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="https://github.com/Surya-Kaliappan" target="_blank"><i class="bx bxl-github"></i></a>
+        </div>
+    </section>
 
      <!-- GSAP Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
