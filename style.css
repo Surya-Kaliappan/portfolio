@@ -5,10 +5,6 @@
     scroll-behavior: smooth;
 }
 
-/* html{
-    overflow-y: scroll;
-} */
-
 html, body{
     margin: 0;
     padding: 0;
@@ -17,19 +13,19 @@ html, body{
     color: lightgray;
     overflow: auto;
     background-color: #0a0a0a;
-    scrollbar-width: none;      /* Firefox */
-    -ms-overflow-style: none;   /* IE 10+ */
+    scrollbar-width: none;    
+    -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
-  display: none;              /* Chrome, Safari, Edge */
+  display: none;
 }
 
 /* Following Cursor */
 .cursor{
     position: fixed;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: rgb(228, 228, 228);
     border-radius: 50%;
     pointer-events: none;
@@ -40,9 +36,9 @@ body::-webkit-scrollbar {
 
 .cursor-follower{
     position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(228, 228, 228);
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(228, 228, 228);
     border-radius: 50%;
     pointer-events: none;
     z-index: 998;
