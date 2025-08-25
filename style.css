@@ -1120,6 +1120,9 @@ header ul a:hover{
         font-size: 7vw;
         margin-top: 20px;
     }
+    #info-section{
+        margin-top: 10px;
+    }
     .info-cards{
         display: flex;
         flex-direction: column;
