@@ -34,6 +34,7 @@ function initLoader(){
     });
 }
 
+// Initial Animation of the Hero Section and other sections
 function initAnimation() {
     gsap.to(".nav", {
         y: 0,
@@ -161,7 +162,7 @@ const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        observer.unobserve(entry.target); // animate only once
+        observer.unobserve(entry.target); // this make animate only once
         }
     });
 }, {
@@ -180,6 +181,7 @@ observer.observe(designer);
 const coder = document.querySelector('.coder');
 observer.observe(coder);
 
+// Project Disclaimer alert
 function disclaimer(){
     alert("This may take some while to open or work because of hosting. you can check the working in console or ignore.")
 }
@@ -199,7 +201,7 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// clicks on the button, scroll to the top of the document
 scrollToTopBtn.addEventListener("click", function() {
   window.scrollTo({
     top: 0,
@@ -207,13 +209,12 @@ scrollToTopBtn.addEventListener("click", function() {
   });
 });
 
-// Get the form and the status message div
+// Contact form process
 var form = document.getElementById("contact-form");
 var formStatus = document.getElementById("form-status"); // Changed variable name from "status" to "formStatus"
 
 // This function will be called when the form is submitted
 async function handleSubmit(event) {
-    // Prevent the form from reloading the page
     event.preventDefault();
     
     var data = new FormData(event.target);
@@ -226,27 +227,24 @@ async function handleSubmit(event) {
             'Accept': 'application/json'
         }
     }).then(response => {
-        // If the submission was successful
         if (response.ok) {
-            formStatus.innerHTML = "Thanks for your submission! I'll get back to you soon."; // Use new variable name
-            formStatus.classList.add('success'); // Use new variable name
-            form.reset(); // Clear the form fields
-            form.style.display = "none"; // Hide the form
+            formStatus.innerHTML = "Thanks for your submission! I'll get back to you soon.";
+            formStatus.classList.add('success'); 
+            form.reset();
+            form.style.display = "none"; 
         } else {
-            // If there was a server error
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
                     formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                 } else {
                     formStatus.innerHTML = "Oops! There was a problem submitting your form.";
                 }
-                formStatus.classList.add('error'); // Use new variable name
+                formStatus.classList.add('error');
             })
         }
     }).catch(error => {
-        // If there was a network error
         formStatus.innerHTML = "Oops! There was a problem submitting your form.";
-        formStatus.classList.add('error'); // Use new variable name
+        formStatus.classList.add('error');
     });
 }
 

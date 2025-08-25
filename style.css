@@ -327,7 +327,7 @@ header ul a:hover{
   background-color: rgba(0, 0, 69, 0.614);
 }
 
-/* Hero Content */
+/* Hero Content (phase 1) */
 .hero{
     position: relative;
     display: flex;
@@ -437,7 +437,6 @@ header ul a:hover{
 
 .skills-video{
     height: 600px;
-    /* mix-blend-mode:lighten; */
 }
 
 .scroll-down{
@@ -445,8 +444,6 @@ header ul a:hover{
     width: 30px;
     border: 2px solid lightgray;
     position: absolute;
-    /* left: 50%;
-    bottom: 10%; */
     bottom: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -473,7 +470,6 @@ header ul a:hover{
 .scroll-down::before {
     top: 30%;
     animation-delay: 0.5s;
-    /* animation: scroll-down 1s ease-in-out infinite; */
 }
 
 @keyframes scroll-down{
@@ -492,6 +488,7 @@ header ul a:hover{
     }
 }
 
+/* Info section (phase 2) */
 .info-section{
     position: relative;
     display: none;
@@ -501,10 +498,7 @@ header ul a:hover{
     min-height: 100vh;
     height: auto;
     margin-top: 100px;
-    /* margin-bottom: 200px; */
     z-index: 20;
-    /* animation: autoDisplayAnimation;
-    animation-timeline: view(); */
 }
 
 .section-title{
@@ -532,7 +526,6 @@ header ul a:hover{
     height: 42vh;
     overflow: hidden;
     border: 1px solid gray;
-    /* background-color: #080020b7; */
     border-radius: 20px;
     transition: 0.5s;
     backdrop-filter: blur(3px);
@@ -593,6 +586,7 @@ header ul a:hover{
     animation: spin 20s infinite linear;
 }
 
+/* To rotate the gear */
 @keyframes spin{
     from{
         transform: rotate(0deg);
@@ -601,6 +595,7 @@ header ul a:hover{
     }
 }
 
+/* Project Section (phase 3) */
 .my-project{
     position: relative;
     display: none;
@@ -769,7 +764,7 @@ header ul a:hover{
   }
 }
 
-/* Skills Section */
+/* Skills Section (phase 4) */
 .skills-section{
     position: relative;
     z-index: 20;
@@ -929,7 +924,7 @@ header ul a:hover{
     filter: grayscale(0);
 }
 
-/* Contact Section */
+/* Contact Section (phase 5) */
 .contact-section{
     width: 100%;
     min-height: 100vh;
@@ -1091,16 +1086,14 @@ header ul a:hover{
     .head-name, .menu-icon{
         font-size: 20px;
     }
+    /* Hero Section */
     .hero-info-title{
         width: 80vw;
         padding: 9px 9px;
         text-align: center;
     }
     .hero-info-h1{
-        /* font-size: 30px; */
         line-height: 9vw;
-        /* transform: scale(1.15); */
-        /* margin-left: 20px; */
         font-size: 8.5vw;
     }
     .hero-info-p{
@@ -1116,6 +1109,7 @@ header ul a:hover{
         transform: scale(0.8);
         left: 45%;
     }
+    /* Info Section */
     .section-title{
         font-size: 7vw;
         margin-top: 20px;
@@ -1149,9 +1143,6 @@ header ul a:hover{
         font-size: 1rem;
     }
     /* Project Section */
-    /* .my-project{
-        margin-bottom: 50rem;
-    } */
     .project-card{
         display: flex;
         flex-direction: column;
