@@ -139,31 +139,44 @@ document.querySelector('.hero-info-btn').addEventListener('click', (e)=>{scrollt
 const desktopNavLinks = document.querySelectorAll('header .nav-link a');
 const sidebarNavLinks = document.querySelectorAll('.sidebar .nav-link a');
 
-// Combine them into one list for the observer setup
 const allNavLinks = document.querySelectorAll('.nav-link a');
 
 const navObserverCallback = (entries) => {
+    // Find the entry that is the most visible on the screen
+    let mostVisibleEntry = null;
+    let maxRatio = 0;
+
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute('id');
-
-            desktopNavLinks.forEach(link => link.classList.remove('active'));
-            sidebarNavLinks.forEach(link => link.classList.remove('active'));
-
-            const activeDesktopLink = document.querySelector(`header .nav-link a[data-target="${sectionId}"]`);
-            if (activeDesktopLink) {
-                activeDesktopLink.classList.add('active');
-            }
-
-            const activeSidebarLink = document.querySelector(`.sidebar .nav-link a[data-target="${sectionId}"]`);
-            if (activeSidebarLink) {
-                activeSidebarLink.classList.add('active');
-            }
+        if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            mostVisibleEntry = entry;
         }
     });
+
+    if (mostVisibleEntry && mostVisibleEntry.isIntersecting) {
+        const sectionId = mostVisibleEntry.target.getAttribute('id');
+
+        desktopNavLinks.forEach(link => link.classList.remove('active'));
+        sidebarNavLinks.forEach(link => link.classList.remove('active'));
+
+        const activeDesktopLink = document.querySelector(`header .nav-link a[data-target="${sectionId}"]`);
+        if (activeDesktopLink) {
+            activeDesktopLink.classList.add('active');
+        }
+
+        const activeSidebarLink = document.querySelector(`.sidebar .nav-link a[data-target="${sectionId}"]`);
+        if (activeSidebarLink) {
+            activeSidebarLink.classList.add('active');
+        }
+    }
 };
 
-const navObserver = new IntersectionObserver(navObserverCallback, { threshold: 0.5 });
+// observe with multiple thresholds to get more accurate data for different screen
+const navObserverOptions = {
+    threshold: [0.2, 0.4, 0.6, 0.8, 1.0]
+};
+
+const navObserver = new IntersectionObserver(navObserverCallback, navObserverOptions);
 
 const uniqueTargets = new Set();
 allNavLinks.forEach(link => {
