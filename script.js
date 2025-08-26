@@ -135,6 +135,48 @@ document.querySelectorAll('.nav-link').forEach((navLink) => {
 });
 document.querySelector('.hero-info-btn').addEventListener('click', (e)=>{scrollto(e, 'a[data-target]')});
 
+// Active Link on Scroll
+const desktopNavLinks = document.querySelectorAll('header .nav-link a');
+const sidebarNavLinks = document.querySelectorAll('.sidebar .nav-link a');
+
+// Combine them into one list for the observer setup
+const allNavLinks = document.querySelectorAll('.nav-link a');
+
+const navObserverCallback = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('id');
+
+            desktopNavLinks.forEach(link => link.classList.remove('active'));
+            sidebarNavLinks.forEach(link => link.classList.remove('active'));
+
+            const activeDesktopLink = document.querySelector(`header .nav-link a[data-target="${sectionId}"]`);
+            if (activeDesktopLink) {
+                activeDesktopLink.classList.add('active');
+            }
+
+            const activeSidebarLink = document.querySelector(`.sidebar .nav-link a[data-target="${sectionId}"]`);
+            if (activeSidebarLink) {
+                activeSidebarLink.classList.add('active');
+            }
+        }
+    });
+};
+
+const navObserver = new IntersectionObserver(navObserverCallback, { threshold: 0.5 });
+
+const uniqueTargets = new Set();
+allNavLinks.forEach(link => {
+    uniqueTargets.add(link.getAttribute('data-target'));
+});
+
+uniqueTargets.forEach(targetId => {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        navObserver.observe(targetElement);
+    }
+});
+
 // Sidebar 
 const sidebar = document.querySelector(".sidebar");
 const toggle = document.querySelector(".toggle");

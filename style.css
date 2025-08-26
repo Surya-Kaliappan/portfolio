@@ -229,6 +229,8 @@ header ul a:hover{
 }
 
 .sidebar ul li a{
+    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: lightgray;
     font-size: 30px;
@@ -262,23 +264,34 @@ header ul a:hover{
     animation: openSidebar 1s forwards;
 }
 
-.nav-link a{
+.nav-link a {
+    color: #ffffff;
+    text-decoration: none;
     position: relative;
+    
+    transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
 }
 
-.nav-link a::after{
+.nav-link a:hover {
+    color: #00aeac;    
+    text-shadow: 0 0 15px #667dff;
+}
+
+.nav-link a::after, .sidebar .nav-link a::after {
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 0;
+    width: 100%; 
     height: 2px;
-    background: #fff;
-    transition: width 0.3s ease;
+    transform: scaleX(0); 
+    transform-origin: center; 
+    background: #fff; 
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.nav-link a:hover::after{
-    width: 100%;
+.nav-link a.active::after, .sidebar .nav-link a.active::after {
+    transform: scaleX(1);
 }
 
 @keyframes openSidebar {
