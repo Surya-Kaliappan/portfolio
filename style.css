@@ -531,6 +531,7 @@ header ul a:hover{
 
 .card{
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     position: relative;
@@ -544,25 +545,20 @@ header ul a:hover{
     backdrop-filter: blur(3px);
 }
 
+.info-content{
+    padding: 5%;
+}
+
 .card h1{
-    position: absolute;
-    margin: 0;
-    bottom: 40%;
-    left: 5%;
     font-size: 1.4vw;
-    z-index: 1;
     color: lightgray;
 }
 
 .card p{
-    position: absolute;
-    bottom: 0%;
-    z-index: 1;
-    /* max-width: 300px; */
+    margin-top: 20px;
     color: rgba(248, 248, 255, 0.912);
     font-size: 17px;
     line-height: 20px;
-    padding: 5%;
     text-align: left;
 }
 
@@ -571,10 +567,24 @@ header ul a:hover{
     height: 50%;
     object-fit: cover;
     mix-blend-mode: lighten;
+    align-self: center;
 }
 
 .card:hover{
     box-shadow: 0 0 15px rgb(211, 211, 211);
+}
+
+.card:nth-child(4){
+    display: flex;
+    flex-direction: row-reverse;
+}
+.card:nth-child(4) .info-content {
+    align-self: center;
+    padding-right: 0;
+}
+.card:nth-child(4) img{
+    width: 40%;
+    height: auto;
 }
 
 .card:nth-child(3){
@@ -582,21 +592,15 @@ header ul a:hover{
     height: 87vh;
 }
 
-.card:nth-child(3) h1{
-    bottom: 20%;
-}
-
 .card:nth-child(4){
     grid-column: span 2;
 }
 
-.card:nth-child(4) h1, .card:nth-child(2) h1{
-    bottom: 35%
-}
-
 .card:nth-child(3) img{
-    height: 30vw;
+    width: 100%;
+    height: auto;
     animation: spin 20s infinite linear;
+    margin-bottom: 40px;
 }
 
 /* To rotate the gear */
