@@ -105,14 +105,14 @@ window.addEventListener('DOMContentLoaded', () => {
         const cursorFollower = document.querySelector(".cursor-follower");
         document.addEventListener("mousemove", (e) => {
             gsap.to(cursor, {
-                x: e.clientX - 10,
-                y: e.clientY - 10,
+                x: e.clientX - 5,
+                y: e.clientY - 5,
                 duration: 0.1,
             })
 
             gsap.to(cursorFollower, {
-                x: e.clientX - 20,
-                y: e.clientY - 20,
+                x: e.clientX - 15,
+                y: e.clientY - 15,
                 duration: 0.2,
             })
         });

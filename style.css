@@ -387,7 +387,7 @@ header ul a:hover{
     font-size: 60px;
     max-width: 600px;
     font-weight: 700;
-    line-height: 70px;
+    line-height: 60px;
     margin-top: 40px;
     margin-bottom: 30px;
     opacity: 0;
@@ -418,7 +418,6 @@ header ul a:hover{
     filter: blur(10px);
     transform: translateY(5rem);
     font-size: 15px;
-
     /* This is for anchor tag */
     text-decoration: none; 
     display: inline-block;
@@ -550,7 +549,7 @@ header ul a:hover{
 }
 
 .card h1{
-    font-size: 1.4vw;
+    font-size: 20px;
     color: lightgray;
 }
 
@@ -577,6 +576,7 @@ header ul a:hover{
 .card:nth-child(4){
     display: flex;
     flex-direction: row-reverse;
+    height: 35vh;
 }
 .card:nth-child(4) .info-content {
     align-self: center;
@@ -589,7 +589,7 @@ header ul a:hover{
 
 .card:nth-child(3){
     grid-row: span 2;
-    height: 87vh;
+    height: 80vh;
 }
 
 .card:nth-child(4){
@@ -600,7 +600,7 @@ header ul a:hover{
     width: 100%;
     height: auto;
     animation: spin 20s infinite linear;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 /* To rotate the gear */
@@ -791,58 +791,54 @@ header ul a:hover{
     min-height: 100vh;
     height: auto;
     width: 100%;
-    margin-bottom: 100px;
-    padding: 0 5%;
+    margin-top: 100px;
 }
 
 .skills-box{
     width: 100%;
-    height: 90vh;
-    position: relative;
     display: flex;
     align-items: start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     mix-blend-mode: lighten;
+    padding: 0 3%;  
+}
+
+.skills-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .skills-image{
-    width: 70%;
+    width: 80%;
     mix-blend-mode: difference;
 }
 
-
 .Designer{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    top:25%;
-    left: 50%;
-    max-width: 400px;
     filter: blur(10px);
+    width: 60%;
 }
 
 .Designer.show{
-    animation: slidebothOnLeft 1.5s ease forwards;
+    animation: slidetoLeft 1.5s ease forwards;
 }
 
-@keyframes slidebothOnLeft{
+@keyframes slidetoLeft{
     0%{
         filter: blur(10px);
-        left: 50%;
+        transform: translateX(100%); 
     } 50% {
         filter: blur(0);
-        left: 0;
+        transform: translateX(0%); 
     } 100% {
         filter: blur(0);
-        left: 0;
+        transform: translateX(0%); 
     }
 }
 
 .Designer h1{
     font-size: 35px;
-    display: flex;
-    align-self: center;
     margin-bottom: 10px;
 }
 
@@ -852,37 +848,30 @@ header ul a:hover{
 }
 
 .coder{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    top:25%;
-    right: 50%;
-    max-width: 400px;
     filter: blur(10px);
+    width: 60%;
+    margin-left: 20px;
 }
 
 .coder.show{
-    animation: slidebothOnRight 1.5s ease forwards;
+    animation: slidetoRight 1.5s ease forwards;
 }
 
-@keyframes slidebothOnRight{
+@keyframes slidetoRight{
     0%{
         filter: blur(10px);
-        right: 50%;
+        transform: translateX(-100%);
     } 50% {
         filter: blur(0);
-        right: 0;
+        transform: translateX(0%);
     } 100% {
         filter: blur(0);
-        right: 0;
+        transform: translateX(0%);
     }
 }
 
 .coder h1{
     font-size: 35px;
-    display: flex;
-    align-self: center;
     margin-bottom: 10px;
 }
 
@@ -892,10 +881,8 @@ header ul a:hover{
 }
 
 .slider{
-    position: absolute;
-    bottom: -5%;
-    right: 20%;
     width: 60%;
+    margin-top: 60px;
     height: var(--height);
     overflow: hidden;
     mask-image: linear-gradient(
@@ -1065,22 +1052,66 @@ header ul a:hover{
     z-index: 999;
 }
 
-
-
-@media screen and (max-width: 1200px) and (min-width: 947px){
+@media screen and (max-width: 1200px) and (min-width: 600px){
     header ul {
-        display: flex;
-        justify-content: space-between;
+        padding: 12px 10px;
         width: 45%;
-        padding: 15px 15px;
-        border-radius: 15px;
-        background-color: rgba(0,0,69,0.708);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 10px #72a1de63;
+        min-width: 400px;
+        background-color: transparent;
+        box-shadow: none;
     }
+    .box-icons{
+        display: none;
+    }
+    .card {
+        height: 48vh;
+    }
+    .info-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .card.card:nth-child(3), .card:nth-child(4) {
+        height: 40vh;
+    }
+    .card:nth-child(3) {
+        display: flex;
+        flex-direction: row;
+        grid-column: span 2;
+    }
+    .card:nth-child(3) .info-content {
+        align-self: center;
+        padding-left: 0;
+    }
+    .card:nth-child(3) img {
+        width: 40%;
+        margin-bottom: 0;
+    }
+    .skills-content {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .skills-image {
+        width: 50%;
+        order: 1;
+    }
+    .Designer {
+        order: 2;
+        text-align: center;
+    }
+    .coder{
+        order: 3;
+        margin-left: 0px;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .slider {
+        margin-top: 100px;
+    }
+    
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 600px){
     .loader-text{
         font-size: 5vw;
     }
@@ -1110,8 +1141,8 @@ header ul a:hover{
         text-align: center;
     }
     .hero-info-h1{
-        line-height: 9vw;
-        font-size: 8.5vw;
+        line-height: 12vw;
+        font-size: 12vw;
     }
     .hero-info-p{
         font-size: 4vw;
@@ -1138,19 +1169,24 @@ header ul a:hover{
     }
     .card{
         width: 90vw;
-        height: 50vh;
+        height: 45vh;
     }
-    .card:nth-child(1) img{
-        transform: scale(1.1);
+    .card:nth-child(4) {
+        flex-direction: column;
+        height: 47vh;
     }
-    .card:nth-child(3){
-        height: 60vh;
+    .card:nth-child(4) img {
+        transform: scale(1.5);
+        margin-top: 10px;
     }
-    .card:nth-child(3) h1{
-        bottom: 20vh;
+    .card:nth-child(4) .info-content{
+        padding: 5%;
     }
-    .card:nth-child(3) img{
-        height: 35vh;
+    .card:nth-child(3) {
+        height: 70vh;
+    }
+    .card:nth-child(3) img {
+        margin-bottom: 10px;
     }
     .card h1{
         bottom: 30%;
@@ -1194,41 +1230,42 @@ header ul a:hover{
         padding: 12px 30px;
     }
     /* Skill Section */
-    .skills-box{
-        position: flex;
+    .skills-content {
         flex-direction: column;
-        align-items: center;
+        margin-top: 30px;
     }
-    .skills-image{
-        width: 100%;
+    .skills-image {
+        width: 70%;
+        order: 1;
     }
-    .Designer{
-        top: 30px;
-        position: relative;
+    .Designer {
+        order: 2;
+        text-align: center;
+        width: 80%;
+        margin-top: 20px;
+    }
+    .coder{
+        order: 3;
+        margin-left: 0px;
+        margin-top: 40px;
+        text-align: center;
+        width: 80%;
     }
     .Designer h1{
         font-size: 2rem;
     }
     .Designer p{
-        margin-top: 10px;
         font-size: 1rem;
-        text-align: center;
-    }
-    .coder{
-        top: 60px;
-        position: relative;
     }
     .coder h1{
         font-size: 2rem;
-        text-align: center;
     }
     .coder p{
-        margin-top: 10px;
         font-size: 1rem;
-        text-align: center;
     }
     .slider{
-        display: none;
+        width: 90%;
+        margin-top: 100px;
     }
     /* Contact Section */
     .contact-box .info{
