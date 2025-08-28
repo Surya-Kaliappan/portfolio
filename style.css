@@ -626,22 +626,28 @@ header ul a:hover{
     z-index: 20;
 }
 
-.project-card{
+.project-content {
     display: flex;
-    width: 80%;
-    align-items: center;
-    gap: 10%;
+    flex-direction: column;
+    margin-top: 70px;
+    /* gap: 20px; */
+    /* background-color: gray; */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin-top: 100px;
+    padding: 5%;
+    /* background-color: red; */
 }
 
 .project-vidbox{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 45%;
     mix-blend-mode: exclusion;
-    position: relative;
     cursor: pointer;
     transition: 0.5s;
     min-width: 400px;
@@ -669,20 +675,15 @@ header ul a:hover{
 }
 
 .project-info h1{
-    width: 90%;
     font-size: 25px;
     font-weight: bold;
     text-wrap: nowrap;
-    margin-top: 0;
-    margin-bottom: 10px;
-    max-width: 450px;
+    margin-bottom: 15px;
 }
 
 .project-info p{
-    width: 100%;
-    max-width: 500px;
-    min-width: 300px;
-    margin-top: 0;
+    /* max-width: 500px;
+    min-width: 300px; */
     font-size: 18px;
 }
 
@@ -840,6 +841,7 @@ header ul a:hover{
 .Designer h1{
     font-size: 35px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .Designer p{
@@ -873,6 +875,7 @@ header ul a:hover{
 .coder h1{
     font-size: 35px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .coder p{
@@ -882,7 +885,7 @@ header ul a:hover{
 
 .slider{
     width: 60%;
-    margin-top: 60px;
+    margin-top: 30px;
     height: var(--height);
     overflow: hidden;
     mask-image: linear-gradient(
@@ -908,7 +911,7 @@ header ul a:hover{
     left: 100%;
     animation: autoRun 10s linear infinite;
     transition: filter 0.5s;
-    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+    animation-delay: calc( (20s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
 }
 .slider .list .item img{
     width: 100%;
@@ -1107,8 +1110,34 @@ header ul a:hover{
     }
     .slider {
         margin-top: 100px;
+        width: 80%;
     }
-    
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 25px;
+        margin-top: 30px;
+    }
+    .project-vidbox{
+        width: 60%;
+        align-self: center;
+    }
+    .project-info {
+        width: 100%;
+        text-align: center;
+        padding: 0 5%;
+    }
+    .project-info h1 {
+        align-self: center;
+    }
+    .project-info p{
+        margin-top: 20px;
+    }
+    .project-info button {
+        align-self: center;
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -1199,11 +1228,13 @@ header ul a:hover{
     .project-card{
         display: flex;
         flex-direction: column;
+        margin-top: 30px;
     }
     .project-vidbox{
         display: flex;
         width: 90%;
         min-width: 70vw;
+        align-self: center;
     }
     .project-info{
         width: 95%;
@@ -1211,7 +1242,7 @@ header ul a:hover{
         margin-top: 30px;
         gap: 10px;
         display: flex;
-        align-items: center;
+        align-self: center;
     }
     .project-info h1{
         width: 100%;
@@ -1225,7 +1256,7 @@ header ul a:hover{
     }
     .project-info button{
         display: flex;
-        align-items: center;
+        align-self: center;
         margin-top: 15px;
         padding: 12px 30px;
     }
@@ -1264,8 +1295,12 @@ header ul a:hover{
         font-size: 1rem;
     }
     .slider{
-        width: 90%;
+        width: 100%;
         margin-top: 100px;
+    }
+    .slider .list .item{
+        height: 70px;
+        width: 70px;
     }
     /* Contact Section */
     .contact-box .info{
