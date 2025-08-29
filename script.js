@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("load", initLoader);
 
     // Following Cursor
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1200) {
         const cursor = document.querySelector(".cursor");
         const cursorFollower = document.querySelector(".cursor-follower");
         document.addEventListener("mousemove", (e) => {
