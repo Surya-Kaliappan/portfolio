@@ -17,7 +17,7 @@ html, body{
     -ms-overflow-style: none;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar{
   display: none;
 }
 
@@ -58,13 +58,18 @@ body::-webkit-scrollbar {
     justify-content: center;
     z-index: 998;
     flex-direction: column;
+    animation: fade-out 0.7s ease-in-out 2.5s forwards;
+}
+
+@keyframes fade-out{
+    to{ opacity: 0; }
 }
 
 .loader-text{
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 2rem;
-    opacity: 0;
+    opacity: 1;
 }
 
 .loader-bar{
@@ -78,6 +83,11 @@ body::-webkit-scrollbar {
     width: 0%;
     height: 100%;
     background: linear-gradient(90deg, #667dff, #00aeac);
+    animation: fill-progress 2s ease-in-out 0.7s forwards;
+}
+
+@keyframes fill-progress{
+    to{ width: 100%; }
 }
 
 .container{
@@ -90,7 +100,6 @@ body::-webkit-scrollbar {
     gap: 100px;
     background-color: black;
     z-index: 30;
-    /* overflow-y: hidden; */
 }
 
 .back-vid{
@@ -105,6 +114,11 @@ body::-webkit-scrollbar {
     z-index: 1;
     transform: translate(-50%, -50%);
     object-fit: cover;
+    animation: fade-in 2s ease-in-out forwards;
+}
+
+@keyframes fade-in{
+    to{ opacity: 1; }
 }
 
 header{
@@ -122,6 +136,11 @@ header{
     box-shadow: 0 0 15px #72a1dea2;
     transform: translateY(-100%);
     z-index: 999;
+    animation: slide-down 1s ease-out 3.2s forwards;
+}
+
+@keyframes slide-down{
+    to{ transform: translateY(0); }
 }
 
 .left{
@@ -264,7 +283,7 @@ header ul a:hover{
     animation: openSidebar 1s forwards;
 }
 
-.nav-link a {
+.nav-link a{
     color: #ffffff;
     text-decoration: none;
     position: relative;
@@ -272,12 +291,12 @@ header ul a:hover{
     transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
 }
 
-.nav-link a:hover {
+.nav-link a:hover{
     color: #00aeac;    
     text-shadow: 0 0 15px #667dff;
 }
 
-.nav-link a::after, .sidebar .nav-link a::after {
+.nav-link a::after, .sidebar .nav-link a::after{
     content: '';
     position: absolute;
     bottom: -5px;
@@ -290,11 +309,11 @@ header ul a:hover{
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.nav-link a.active::after, .sidebar .nav-link a.active::after {
+.nav-link a.active::after, .sidebar .nav-link a.active::after{
     transform: scaleX(1);
 }
 
-@keyframes openSidebar {
+@keyframes openSidebar{
     to{
         transform: translateY(50px);
         opacity: 1;
@@ -310,13 +329,13 @@ header ul a:hover{
         transform: translateY(50px);
         opacity: 1;
     }
-    to {
+    to{
         transform: translateY(-100%);
         opacity: 0;
     }
 }
 
-#scrollToTopBtn {
+#scrollToTopBtn{
   display: none;
   position: fixed; 
   bottom: 80px;
@@ -336,7 +355,7 @@ header ul a:hover{
   transition: opacity 0.7s ease-in-out;
 }
 
-#scrollToTopBtn:hover {
+#scrollToTopBtn:hover{
   background-color: rgba(0, 0, 69, 0.614);
 }
 
@@ -350,6 +369,17 @@ header ul a:hover{
     align-items: center;
     justify-content: flex-start;
     z-index: 20;
+}
+
+/* this is the state of loding animation */
+.hero-info-title,
+.hero-info-h1,
+.hero-info-p,
+.hero-info-btn,
+.scroll-down{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
 }
 
 .hero-info{
@@ -371,6 +401,15 @@ header ul a:hover{
     opacity: 0;
     filter: blur(10px);
     transform: translateY(5rem);
+    animation: fade-up 0.8s ease-out 3.2s forwards;
+}
+
+@keyframes fade-up{
+    to{
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
 }
 
 .diamond{
@@ -378,9 +417,7 @@ header ul a:hover{
 }
 
 @keyframes rotate360{
-    to{
-        transform: rotateY(360deg);
-    }
+    to{ transform: rotateY(360deg); }
 }
 
 .hero-info-h1{
@@ -393,6 +430,7 @@ header ul a:hover{
     opacity: 0;
     filter: blur(10px);
     transform: translateY(5rem);
+    animation: fade-up 0.8s ease-out 4s forwards;
 }
 
 .hero-info-p{
@@ -403,6 +441,7 @@ header ul a:hover{
     opacity: 0;
     filter: blur(10px);
     transform: translateY(5rem);
+    animation: fade-up 0.6s ease-out 4.6s forwards;
 }
 
 .hero-info-btn{
@@ -418,6 +457,7 @@ header ul a:hover{
     filter: blur(10px);
     transform: translateY(5rem);
     font-size: 15px;
+    animation: fade-up 0.4s ease-out 5.3s forwards;
     /* This is for anchor tag */
     text-decoration: none; 
     display: inline-block;
@@ -437,9 +477,7 @@ header ul a:hover{
     animation: animate-gradient 2.5s linear infinite;
 }
 @keyframes animate-gradient{
-    to{
-        background-position: 200%;
-    }
+    to{ background-position: 200%; }
 }
 
 .skills-video-box{
@@ -463,10 +501,11 @@ header ul a:hover{
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.626);
     opacity: 0;
+    animation: fade-up 0.8s ease-out 5.6s forwards;
 }
 
 .scroll-down::before,
-.scroll-down::after {
+.scroll-down::after{
     content: "";
     position: absolute;
     top: 30%;
@@ -479,7 +518,7 @@ header ul a:hover{
     border-left: transparent;
     animation: scroll-down 2s ease-in-out infinite;
 }
-.scroll-down::before {
+.scroll-down::before{
     top: 30%;
     animation-delay: 0.5s;
 }
@@ -511,6 +550,7 @@ header ul a:hover{
     height: auto;
     margin-top: 100px;
     z-index: 20;
+    animation: show-up;
 }
 
 .section-title{
@@ -578,7 +618,7 @@ header ul a:hover{
     flex-direction: row-reverse;
     height: 35vh;
 }
-.card:nth-child(4) .info-content {
+.card:nth-child(4) .info-content{
     align-self: center;
     padding-right: 0;
 }
@@ -607,7 +647,7 @@ header ul a:hover{
 @keyframes spin{
     from{
         transform: rotate(0deg);
-    } to {
+    } to{
         transform: rotate(360deg);
     }
 }
@@ -626,15 +666,13 @@ header ul a:hover{
     z-index: 20;
 }
 
-.project-content {
+.project-content{
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
-    /* gap: 20px; */
-    /* background-color: gray; */
+    margin-top: 40px;
 }
 
-.project-card {
+.project-card{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -691,7 +729,6 @@ header ul a:hover{
     color: white;
     padding: 15px 35px;
     border-radius: 10px;
-    margin-top: 50px;
     margin-left: 10px;
     border: 1px solid #72a1de81;
     background-color: #2200493d;
@@ -704,78 +741,64 @@ header ul a:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
+.project-btns{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
 /* Display Fade Animation */
-.autoDisplay {
+.autoDisplay{
   opacity: 0;
   transform: translateY(-200px) scale(0);
   filter: blur(10px);
   transition: none;
 }
 
-.autoDisplay.show {
+.autoDisplay.show{
   animation: autoDisplayAnimation 1s ease-out forwards;
 }
 
-@keyframes autoDisplayAnimation {
-  from {
+@keyframes autoDisplayAnimation{
+  from{
     opacity: 0;
     filter: blur(10px);
     transform: translateY(-200px) scale(0);
   }
-  60% {
+  70%{
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
   }
-  to {
+  to{
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
   }
 }
 
-/* Blur Effect Animation */
-.autoBlur{
-    animation: autoBlurAnimation linear both;
-    animation-timeline: view();
-}
-
-@keyframes autoBlurAnimation{
-    0%{
-        filter: blur(40px);
-    }
-    35%, 65%{
-        filter: blur(0);
-        opacity: 1;
-    }
-    100%{
-        filter: blur(40px);
-        opacity: 0;
-    }
-}
-
-.fadein-left {
+.fadein-left{
   opacity: 0;
   transform: translateX(-500px) scale(0.2);
   filter: blur(10px);
 }
 
-.fadein-left.show {
+.fadein-left.show{
   animation: fadeInLeftAnimation 1.2s ease-out forwards;
 }
 
-@keyframes fadeInLeftAnimation {
-  0% {
+@keyframes fadeInLeftAnimation{
+  0%{
     opacity: 0;
     transform: translateX(-500px) scale(0.2);
     filter: blur(10px);
   }
-  50% {
+  50%{
     opacity: 1;
     transform: translateX(0) scale(1);
     filter: blur(0);
   }
-  100% {
+  100%{
     /* Same as 50% to freeze it visually */
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -806,7 +829,7 @@ header ul a:hover{
     padding: 0 3%;  
 }
 
-.skills-content {
+.skills-content{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -830,10 +853,10 @@ header ul a:hover{
     0%{
         filter: blur(10px);
         transform: translateX(100%); 
-    } 50% {
+    } 50%{
         filter: blur(0);
         transform: translateX(0%); 
-    } 100% {
+    } 100%{
         filter: blur(0);
         transform: translateX(0%); 
     }
@@ -864,10 +887,10 @@ header ul a:hover{
     0%{
         filter: blur(10px);
         transform: translateX(-100%);
-    } 50% {
+    } 50%{
         filter: blur(0);
         transform: translateX(0%);
-    } 100% {
+    } 100%{
         filter: blur(0);
         transform: translateX(0%);
     }
@@ -1022,19 +1045,19 @@ header ul a:hover{
     box-shadow: 0 0 30px #72a1de81;
 }
 
-#form-status {
+#form-status{
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
     text-align: center;
 }
 
-#form-status.success {
+#form-status.success{
     background-color: #d4edda; /* Light green */
     color: #155724; /* Dark green */
 }
 
-#form-status.error {
+#form-status.error{
     background-color: #f8d7da; /* Light red */
     color: #721c24; /* Dark red */
 }
@@ -1060,7 +1083,8 @@ header ul a:hover{
     .cursor, .cursor-follower{
         display: none;
     }
-    header ul {
+    /* Nav bar */
+    header ul{
         padding: 12px 10px;
         width: 45%;
         min-width: 400px;
@@ -1070,44 +1094,45 @@ header ul a:hover{
     .box-icons{
         display: none;
     }
-    .card {
+    /* Info Section */
+    .card{
         height: 48vh;
     }
-    .info-cards {
+    .info-cards{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    .card.card:nth-child(3), .card:nth-child(4) {
+    .card.card:nth-child(3), .card:nth-child(4){
         height: 40vh;
     }
-    .card:nth-child(3) {
+    .card:nth-child(3){
         display: flex;
         flex-direction: row;
         grid-column: span 2;
     }
-    .card:nth-child(3) .info-content {
+    .card:nth-child(3) .info-content{
         align-self: center;
         padding-left: 0;
     }
-    .card:nth-child(3) img {
+    .card:nth-child(3) img{
         width: 40%;
         margin-bottom: 0;
     }
-    .skills-content {
+    /* Skill Section */
+    .skills-content{
         flex-direction: column;
         margin-top: 30px;
     }
-    .skills-image {
+    .skills-image{
         width: 50%;
         order: 1;
     }
-    .Designer {
+    .Designer{
         order: 2;
         text-align: center;
         width: 80%;
         max-width: 900px;
-        background-color: gray;
     }
     .coder{
         order: 3;
@@ -1116,38 +1141,39 @@ header ul a:hover{
         text-align: center;
         width: 80%;
         max-width: 900px;
-        background-color: gray;
     }
-    .slider {
+    .slider{
         margin-top: 100px;
         width: 80%;
     }
-    .project-card {
+    /* Project Section */
+    .project-content{
+        margin-top: 10px;
+    }
+    .project-card{
         display: flex;
         flex-direction: column;
         align-content: center;
-        gap: 25px;
-        margin-top: 30px;
     }
     .project-vidbox{
         width: 60%;
         align-self: center;
     }
-    .project-info {
+    .project-info{
         width: 100%;
         align-self: center;
         max-width: 1000px;
         text-align: center;
         padding: 0 5%;
-        background-color: gray;
     }
-    .project-info h1 {
+    .project-info h1{
+        margin-top: 20px;
         align-self: center;
     }
     .project-info p{
         margin-top: 20px;
     }
-    .project-info button {
+    .project-btns{
         align-self: center;
         margin-top: 20px;
     }
@@ -1166,6 +1192,7 @@ header ul a:hover{
     .cursor, .cursor-follower{
         display: none;
     }
+    /* Nav bar */
     header{
         position: fixed;
         height: 45px;
@@ -1213,22 +1240,23 @@ header ul a:hover{
         width: 90vw;
         height: 45vh;
     }
-    .card:nth-child(4) {
+    .card:nth-child(4){
         flex-direction: column;
         height: 47vh;
     }
-    .card:nth-child(4) img {
+    .card:nth-child(4) img{
         transform: scale(1.5);
         margin-top: 10px;
     }
     .card:nth-child(4) .info-content{
         padding: 5%;
     }
-    .card:nth-child(3) {
+    .card:nth-child(3){
         height: 70vh;
     }
-    .card:nth-child(3) img {
+    .card:nth-child(3) img{
         margin-bottom: 10px;
+        max-width: 400px;
     }
     .card h1{
         bottom: 30%;
@@ -1238,6 +1266,9 @@ header ul a:hover{
         font-size: 1rem;
     }
     /* Project Section */
+    .project-content{
+        margin-top: 0px;
+    }
     .project-card{
         display: flex;
         flex-direction: column;
@@ -1273,19 +1304,23 @@ header ul a:hover{
         margin-top: 15px;
         padding: 12px 30px;
     }
+    .project-btns{
+        align-self: center;
+        margin-top: 0px;
+    }
     /* Skill Section */
-    .skills-content {
+    .skills-content{
         flex-direction: column;
         margin-top: 30px;
     }
-    .skills-image {
+    .skills-image{
         width: 70%;
         order: 1;
     }
-    .Designer {
+    .Designer{
         order: 2;
         text-align: center;
-        width: 80%;
+        width: 90%;
         margin-top: 20px;
     }
     .coder{
@@ -1293,7 +1328,7 @@ header ul a:hover{
         margin-left: 0px;
         margin-top: 40px;
         text-align: center;
-        width: 80%;
+        width: 90%;
     }
     .Designer h1{
         font-size: 1.5rem;

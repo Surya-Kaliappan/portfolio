@@ -1,103 +1,26 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const gsap = window.gsap;
-
-    // Loading Animation
-    function initLoader() {
+    window.addEventListener("load", () => {
         const loader = document.querySelector(".loader");
-        const loaderText = document.querySelector(".loader-text");
-        const loaderProgress = document.querySelector(".loader-progress");
+        
+        // After 3.2 seconds hide the loader
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 3200);
 
-        gsap.to(loaderText, {
-            opacity: 1,
-            duration: 0.7,
-            ease: "power2.out",
+        setTimeout(() => {
+        // Find all the sections that need to be displayed after completion of hero section
+        const sectionsToDisplay = document.querySelectorAll(
+            '.info-section, .skills-section, .my-project, .contact-section, .footer'
+        );
+
+        // Loop through them and change their display style to 'flex'
+        sectionsToDisplay.forEach(section => {
+            section.style.display = 'flex';
         });
 
-        gsap.to(loaderProgress, {
-            width: "100%",
-            duration: 2,
-            ease: "power2.inOut",
-            onComplete: () => {
-                gsap.to(loader, {
-                    opacity: 0,
-                    duration: 0.7,
-                    onComplete: () => {
-                        loader.style.display = "none";
-                        initAnimation();
-                    }
-                });
-            }
-        });
-        gsap.to(".back-vid", {
-            opacity: 1,
-            duration: 2,
-            ease: "power2.inOut",
-        });
-    }
-
-    // Initial Animation of the Hero Section and other sections
-    function initAnimation() {
-        gsap.to(".nav", {
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-        });
-
-        const t1 = gsap.timeline();
-        t1.to(".hero-info-title", {
-                opacity: 1,
-                filter: 'blur(0px)',
-                y: 0,
-                duration: 1.2,
-                ease: "power3.out",
-            })
-            .to(".hero-info-h1", {
-                opacity: 1,
-                filter: 'blur(0px)',
-                y: 0,
-                duration: 1.2,
-                ease: "power3.out",
-            }, "-=0.3")
-            .to(".hero-info-p", {
-                opacity: 1,
-                filter: 'blur(0px)',
-                y: 0,
-                duration: 0.8,
-                ease: "power3.out,"
-            }, "-=0.3")
-            .to(".hero-info-btn", {
-                opacity: 1,
-                filter: 'blur(0px)',
-                y: 0,
-                duration: 0.5,
-                ease: "power3.out",
-            }, "-=0.3")
-            .to(".scroll-down", {
-                opacity: 1,
-                filter: 'blur(0px)',
-                duration: 0.8,
-                ease: "power3.out",
-            }, "-=0.3")
-            .to(".info-section", {
-                display: 'flex'
-            })
-            .to(".skills-section", {
-                display: 'flex',
-            })
-            .to(".my-project", {
-                display: 'flex'
-            })
-            .to(".contact-section", {
-                display: 'flex'
-            })
-            .to(".footer", {
-                display: 'flex',
-            })
-    }
-
-    // Load when Reload
-    window.addEventListener("load", initLoader);
+    }, 6000);
+    });
 
     // Following Cursor
     if (window.innerWidth > 1200) {
@@ -205,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.2 // Trigger when 20% visible
+        threshold: 0.5 // Trigger when 50% visible
     });
 
     document.querySelectorAll('.autoDisplay, .fadein-left, .Designer, .coder').forEach(i => revealObserver.observe(i));
