@@ -498,7 +498,6 @@ header ul a:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50px;
-    cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.626);
     opacity: 0;
     animation: fade-up 0.8s ease-out 5.6s forwards;
