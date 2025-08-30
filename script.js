@@ -19,26 +19,35 @@ window.addEventListener('DOMContentLoaded', () => {
             section.style.display = 'flex';
         });
 
-    }, 6000);
+    }, 4000);
     });
 
     // Following Cursor
     if (window.innerWidth > 1200) {
         const cursor = document.querySelector(".cursor");
         const cursorFollower = document.querySelector(".cursor-follower");
-        document.addEventListener("mousemove", (e) => {
-            gsap.to(cursor, {
-                x: e.clientX - 5,
-                y: e.clientY - 5,
-                duration: 0.1,
-            })
 
-            gsap.to(cursorFollower, {
-                x: e.clientX - 15,
-                y: e.clientY - 15,
-                duration: 0.2,
-            })
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
+
+        function animateCursor() {
+            // Small cursor snaps directly
+            cursor.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
+
+            // Follower moves smoothly (lerp)
+            followerX += (mouseX - followerX) * 0.1; 
+            followerY += (mouseY - followerY) * 0.1; 
+            cursorFollower.style.transform = `translate(${followerX - 15}px, ${followerY - 15}px)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
     }
 
     // scroll to View
