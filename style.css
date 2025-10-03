@@ -1380,6 +1380,10 @@ header ul a:hover{
         align-items: center;
         padding: 20px;
     }
+    .footer h1{
+        font-size: 1.3rem;
+        text-align: center;
+    }
     .footer-icon{
         display: flex;
         flex-direction: row;
